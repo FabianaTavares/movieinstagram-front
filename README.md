@@ -1,5 +1,8 @@
 # Descrição Desafio Final - Movinstagram
 
+==============
+[![Build Status](https://travis-ci.org/FabianaTavares/movieinstagram-front.svg?branch=main)](https://travis-ci.org/FabianaTavares/movieinstagram-front)
+
 Bootcamp FrontEnd - IGTI 2020
 O Desafio final poderia ser feito em qualquer dos três Frameworks: Angular, React ou Vue. Optei por começar com Angular, mas pretendo fazer com as outras duas também.
 
