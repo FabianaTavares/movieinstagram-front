@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.2.0](https://github.com/FabianaTavares/movieinstagram-front/compare/v0.1.4...v0.2.0) (2023-07-23)
+
+
+### ⚠ BREAKING CHANGES
+
+* config and angular version
+
+### Funcionalidades
+
+* config and angular version ([a7aadaf](https://github.com/FabianaTavares/movieinstagram-front/commit/a7aadaff1203a2cc71a24dd48cb7f3ad1265c22d))
+
 ### [0.1.4](https://github.com/FabianaTavares/movieinstagram-front/compare/v0.1.3...v0.1.4) (2023-07-23)
 
 ### [0.1.3](https://github.com/FabianaTavares/movieinstagram-front/compare/v0.1.2...v0.1.3) (2023-07-23)
