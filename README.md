@@ -3,6 +3,8 @@
 ![GitHub Workflow Status](https://github.com/FabianaTavares/movieinstagram-front/workflows/ChangeLog/badge.svg)
 ![GitHub package.json version (subfolder of monorepo)](https://img.shields.io/github/package-json/v/FabianaTavares/movieinstagram-front?color=blue)
 
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=FabianaTavares_movieinstagram-front&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=FabianaTavares_movieinstagram-front)
+
 Bootcamp FrontEnd - IGTI 2020
 O Desafio final poderia ser feito em qualquer dos três Frameworks: Angular, React ou Vue. Optei por começar com Angular, mas pretendo fazer com as outras duas também.
 
