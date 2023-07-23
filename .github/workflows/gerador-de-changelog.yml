@@ -46,17 +46,3 @@ jobs:
         git checkout master
         npm run release
         git push origin master --follow-tags
-
-  firebase_deploy:
-    name: firebase_deploy
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
-      - uses: FirebaseExtended/action-hosting-deploy@v0
-        with:
-          repoToken: '${{ secrets.GITHUB_TOKEN }}'
-          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_PROJETOS_ESTATICOS_FABI }}'
-          channelId: live
-          projectId: projetos-estaticos-fabi
