@@ -1,12 +1,12 @@
 # Descrição Desafio Final - Movinstagram
 
-==============
-[![Build Status](https://travis-ci.org/FabianaTavares/movieinstagram-front.svg?branch=main)](https://travis-ci.org/FabianaTavares/movieinstagram-front)
+![GitHub Workflow Status](https://github.com/FabianaTavares/movieinstagram-front/workflows/ChangeLog/badge.svg)
+![GitHub package.json version (subfolder of monorepo)](https://img.shields.io/github/package-json/v/FabianaTavares/movieinstagram-front?color=blue)
 
 Bootcamp FrontEnd - IGTI 2020
 O Desafio final poderia ser feito em qualquer dos três Frameworks: Angular, React ou Vue. Optei por começar com Angular, mas pretendo fazer com as outras duas também.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.0.
+This project was actually with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.0.
 
 ## Observação
 
