@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.2](https://github.com/FabianaTavares/movieinstagram-front/compare/v0.1.1...v0.1.2) (2023-07-23)
+
+
+### Funcionalidades
+
+* remove firebase ([ead47f6](https://github.com/FabianaTavares/movieinstagram-front/commit/ead47f641ad4078b16d4b7a2ff9bef88df34e349))
+
 ### [0.1.1](https://github.com/FabianaTavares/movieinstagram-front/compare/v0.1.0...v0.1.1) (2023-07-23)
 
 
