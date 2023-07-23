@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.0.0](https://github.com/FabianaTavares/movieinstagram-front/compare/v4.0.0...v5.0.0) (2023-07-23)
+
+
+### ⚠ BREAKING CHANGES
+
+* teste
+
+### Funcionalidades
+
+* update version angular 11 to 12 ([93641f5](https://github.com/FabianaTavares/movieinstagram-front/commit/93641f5dfcd51471df3daa2fe59da29c5a70f95d))
+
 ## [4.0.0](https://github.com/FabianaTavares/movieinstagram-front/compare/v0.3.0...v4.0.0) (2023-07-23)
 
 
