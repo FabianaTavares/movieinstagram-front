@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { forkJoin, Subscription } from 'rxjs';
 
 import { CommentsDTO } from '../../models/movie-comments.model';
@@ -24,7 +24,7 @@ export class PostsTimelineComponent implements OnInit {
   testes: PostComComentariosDTO[] = [];
   userSelected: string = '';
   subscription!: Subscription;
-  formPostGroup!: FormGroup;
+  formPostGroup!: UntypedFormGroup;
 
   usersLikes!: number;
   qtdCurtidas!: number;
@@ -33,7 +33,7 @@ export class PostsTimelineComponent implements OnInit {
 
   constructor(
     private movieService: MovieService,
-    private formBuilder: FormBuilder,
+    private formBuilder: UntypedFormBuilder,
   ) {
     this.subscription = this.movieService.getUsuarioLogadoEvent().subscribe(
       (usuarioTab: any) => {
