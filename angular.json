@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "movie-intagram": {
+    "movie-instagram": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/movie-intagram",
+            "outputPath": "dist/movie-instagram",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -76,18 +76,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "movie-intagram:build"
+            "browserTarget": "movie-instagram:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "movie-intagram:build:production"
+              "browserTarget": "movie-instagram:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "movie-intagram:build"
+            "browserTarget": "movie-instagram:build"
           }
         },
         "test": {
@@ -116,18 +116,30 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "movie-intagram:serve"
+            "devServerTarget": "movie-instagram:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "movie-intagram:serve:production"
+              "devServerTarget": "movie-instagram:serve:production"
             }
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
           }
         }
       }
     }
   },
   "cli": {
-    "analytics": false
+    "analytics": false,
+    "schematicCollections": [
+      "@angular-eslint/schematics"
+    ]
   }
 }

@@ -1,5 +1,5 @@
 {
-  "name": "movie-intagram",
+  "name": "movie-instagram",
   "version": "7.0.0",
   "scripts": {
     "ng": "ng",
@@ -25,7 +25,6 @@
     "url": "https://github.com/FabianaTavares/movieinstagram-front.git"
   },
   "dependencies": {
-    "@angular-eslint/schematics": "^1.0.0",
     "@angular/animations": "^14.3.0",
     "@angular/common": "^14.3.0",
     "@angular/compiler": "^14.3.0",
@@ -43,6 +42,11 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^14.2.12",
+    "@angular-eslint/builder": "16.1.0",
+    "@angular-eslint/eslint-plugin": "16.1.0",
+    "@angular-eslint/eslint-plugin-template": "16.1.0",
+    "@angular-eslint/schematics": "16.1.0",
+    "@angular-eslint/template-parser": "16.1.0",
     "@angular/cli": "^14.2.12",
     "@angular/compiler-cli": "^14.3.0",
     "@commitlint/cli": "^17.6.7",
@@ -50,9 +54,11 @@
     "@types/jasmine": "~3.6.0",
     "@types/materialize-css": "^1.0.8",
     "@types/node": "^12.11.1",
+    "@typescript-eslint/eslint-plugin": "5.62.0",
+    "@typescript-eslint/parser": "5.62.0",
     "codelyzer": "^6.0.0",
     "cz-conventional-changelog": "^3.3.0",
-    "eslint": "^8.45.0",
+    "eslint": "^8.44.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-html": "^7.1.0",
     "eslint-plugin-prettier": "^5.0.0",
@@ -74,7 +80,6 @@
     "stylelint-prettier": "^4.0.0",
     "ts-node": "~8.3.0",
     "tslib": "^2.6.0",
-    "tslint": "~6.1.0",
     "typescript": "~4.6.4"
   }
 }
