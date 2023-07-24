@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [7.1.0](https://github.com/FabianaTavares/movieinstagram-front/compare/v7.0.0...v7.1.0) (2023-07-24)
+
+
+### Funcionalidades
+
+* update version ngx bootstrap to 9 ([fb032f5](https://github.com/FabianaTavares/movieinstagram-front/commit/fb032f518827b3630e65130f14b3d5a1c442f3d2))
+
 ## [7.0.0](https://github.com/FabianaTavares/movieinstagram-front/compare/v6.0.0...v7.0.0) (2023-07-24)
 
 
