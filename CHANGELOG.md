@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [8.1.0](https://github.com/FabianaTavares/movieinstagram-front/compare/v8.0.2...v8.1.0) (2023-07-29)
+
+
+### Funcionalidades
+
+* teste ([6043cc6](https://github.com/FabianaTavares/movieinstagram-front/commit/6043cc6272d5bb3e6ecf72ab58ffbbbc22b4b2e3))
+
 ### [8.0.2](https://github.com/FabianaTavares/movieinstagram-front/compare/v8.0.1...v8.0.2) (2023-07-29)
 
 
