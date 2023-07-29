@@ -8,10 +8,9 @@ import { PostsDTO } from './../../models/movie-posts.model';
 @Component({
   selector: 'app-timeline',
   templateUrl: './timeline.component.html',
-  styleUrls: ['./timeline.component.scss']
+  styleUrls: ['./timeline.component.scss'],
 })
 export class TimelineComponent implements OnInit {
-
   postsListas: PostsDTO[] = [];
   commentsDTO: CommentsDTO[] = [];
   likesDTO: LikesDTO[] = [];
@@ -23,9 +22,7 @@ export class TimelineComponent implements OnInit {
   // tslint:disable-next-line: no-inferrable-types
   loading: boolean = false;
 
-  constructor(
-    private movieService: MovieService
-  ) { }
+  constructor(private movieService: MovieService) {}
 
   ngOnInit(): void {
     this.loading = true;
@@ -37,30 +34,34 @@ export class TimelineComponent implements OnInit {
   recuperaListaPosts() {
     this.movieService.getPostsList().subscribe(
       (response) => {
+        console.log(response);
         this.postsListas = response;
         this.qtdPosts = this.postsListas.length;
         this.loading = false;
-      }, () => this.loading = false
+      },
+      () => (this.loading = false),
     );
   }
 
   recuperaListaComments() {
     this.movieService.getCommentsList().subscribe(
       (response) => {
+        console.log(response);
         this.commentsDTO = response;
         this.qtdComentarios = this.commentsDTO.length;
-      }, () => this.loading = false
-
+      },
+      () => (this.loading = false),
     );
   }
 
   recuperaListaLikes() {
-
     this.movieService.getLikesList().subscribe(
       (response) => {
+        console.log(response);
         this.likesDTO = response;
         this.qtdCurtidas = this.likesDTO.length;
-      }, () => this.loading = false
+      },
+      () => (this.loading = false),
     );
   }
 }

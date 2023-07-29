@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
-import { forkJoin, Subscription } from 'rxjs';
+import { combineLatest, forkJoin, Subscription } from 'rxjs';
 
 import { CommentsDTO } from '../../models/movie-comments.model';
 import { LikesDTO } from '../../models/movie-likes.model';
@@ -8,14 +8,14 @@ import { PostComComentariosDTO } from '../../models/movie-posts-coments.model';
 import { PostsDTO } from '../../models/movie-posts.model';
 import { MovieService } from '../../services/movie.service';
 import { BestFriendsDTO } from './../../models/movie-best-friends.model';
+import { map, takeWhile } from 'rxjs/operators';
 
 @Component({
   selector: 'app-posts-timeline',
   templateUrl: './posts-timeline.component.html',
-  styleUrls: ['./posts-timeline.component.scss']
+  styleUrls: ['./posts-timeline.component.scss'],
 })
 export class PostsTimelineComponent implements OnInit {
-
   postsListas!: PostsDTO[];
   comentsListas: CommentsDTO[] = [];
   likesDTO: LikesDTO[] = [];
@@ -29,69 +29,76 @@ export class PostsTimelineComponent implements OnInit {
   usersLikes!: number;
   qtdCurtidas!: number;
   qtdComentarios!: number;
-  public isActive:boolean = false;
+  public isActive: boolean = false;
+
+  componentIsActive = true;
 
   constructor(
     private movieService: MovieService,
     private formBuilder: UntypedFormBuilder,
   ) {
-    this.subscription = this.movieService.getUsuarioLogadoEvent().subscribe(
-      (usuarioTab: any) => {
-        this.userSelected = usuarioTab;
-      }
-    );
-   }
+    this.subscription = this.movieService.getUsuarioLogadoEvent().subscribe((usuarioTab: any) => {
+      this.userSelected = usuarioTab;
+    });
+  }
 
   ngOnInit(): void {
     this.recuperaListaPosts();
     this.criarForm();
   }
 
-   ngOnDestroy() {
+  ngOnDestroy() {
     this.subscription.unsubscribe();
   }
 
-  criarForm(){
+  criarForm() {
     this.formPostGroup = this.formBuilder.group({
-    inputComent: ["", [Validators.required]]
-  });
+      inputComent: ['', [Validators.required]],
+    });
   }
 
   recuperaListaPosts() {
-    const buscaServicos = forkJoin([
+    combineLatest([
       this.movieService.getPostsList(),
       this.movieService.getCommentsList(),
       this.movieService.getLikesList(),
       this.movieService.getBestFriendList(),
-    ]);
-
-    buscaServicos.subscribe(
-      ([posts, coments, likes, bestFriends]: [PostsDTO[], CommentsDTO[], LikesDTO[], BestFriendsDTO[]]) => {
-
+    ])
+      .pipe(
+        map(([posts, coments, likes, bestFriends]) => ({
+          posts,
+          coments,
+          likes,
+          bestFriends,
+        })),
+        takeWhile(() => this.componentIsActive),
+      )
+      .subscribe((data) => {
         const postsMap = new Map<string, PostComComentariosDTO>();
-        for (const post of posts) {
+        console.log(postsMap);
+        for (const post of data.posts) {
           postsMap.set(post.id, { ...post, coments: [], likes: [] });
         }
-        for (const coment of coments) {
+        for (const coment of data.coments) {
           postsMap.get(coment.postId)?.coments?.push(coment);
         }
-        for (const like of likes) {
+        for (const like of data.likes) {
           postsMap.get(like.postId)?.likes?.push(like.user);
         }
 
         this.testes = Array.from(postsMap.values());
 
-        this.bestfriend = bestFriends;
+        console.log(this.testes, data.bestFriends);
 
-      }
-    );
+        this.bestfriend = data.bestFriends;
+      });
   }
 
   userJaCurtiu(item: PostComComentariosDTO): boolean {
     return item.likes.indexOf(this.userSelected) === -1 ? false : true;
   }
 
-  likeHeartPost(item: PostComComentariosDTO){
+  likeHeartPost(item: PostComComentariosDTO) {
     this.isActive = !this.isActive; // necessário?
     const index = item?.likes?.indexOf(this.userSelected);
     if (index == -1) {
@@ -101,20 +108,18 @@ export class PostsTimelineComponent implements OnInit {
     }
   }
 
-  salvar(item: PostComComentariosDTO){
-    const comentario = this.formPostGroup.get("inputComent")!.value;
+  salvar(item: PostComComentariosDTO) {
+    const comentario = this.formPostGroup.get('inputComent')!.value;
     this.addComentario(item, comentario);
     this.formPostGroup.reset();
   }
 
-  addComentario(item: PostComComentariosDTO, textoComentario: string){
+  addComentario(item: PostComComentariosDTO, textoComentario: string) {
     item.coments.push({
-      id: "",
+      id: '',
       postId: item.id,
       comment: textoComentario,
       user: this.userSelected,
     });
-
   }
-
 }
