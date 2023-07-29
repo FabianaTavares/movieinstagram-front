@@ -14,6 +14,7 @@ import { MovieModule } from './modules/movie.module';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { getDatabase, provideDatabase } from '@angular/fire/database';
+//import { firebase } from 'src/environments/firebase.environment';
 
 @NgModule({
   declarations: [AppComponent],
