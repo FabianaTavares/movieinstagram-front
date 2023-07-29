@@ -21,4 +21,4 @@ jobs:
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_PROJETOS_ANGULAR_FABI }}'
           channelId: live
           projectId: projetos-angular-fabi
-          entryPoint: "./../../dist/movie-instagram"
+          entryPoint: "."
