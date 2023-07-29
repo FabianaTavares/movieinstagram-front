@@ -12,14 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-
-      # instala a versão 14.x do Node.js
-      - name: Instala o Node.js 14.x
-        uses: actions/setup-node@v1
-        with:
-          node-version: 14.x
-
-      - run: npm ci && npm run build
+      - run: npm run build
       - name: FirebaseHosting Deploy
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
