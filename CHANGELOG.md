@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [9.0.0](https://github.com/FabianaTavares/movieinstagram-front/compare/v8.5.0...v9.0.0) (2023-07-29)
+
+
+### ⚠ BREAKING CHANGES
+
+* Y
+
+N
+
+### Errors Corrigidos
+
+* agora vai pipeline firebse ([660ac66](https://github.com/FabianaTavares/movieinstagram-front/commit/660ac66064cf669372749f1d3f656e312aeab1dd))
+
 ## [8.5.0](https://github.com/FabianaTavares/movieinstagram-front/compare/v8.4.0...v8.5.0) (2023-07-29)
 
 
