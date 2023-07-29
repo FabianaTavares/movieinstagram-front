@@ -33,10 +33,10 @@ jobs:
         email: "changelog@users.noreply.github.com"
 
     # instala a versão 11.x do Node.js
-    - name: Instala o Node.js 16.x
+    - name: Instala o Node.js 14.x
       uses: actions/setup-node@v1
       with:
-        node-version: 16.x
+        node-version: 14.x
 
     # instala as dependências, vai para a master
     # executa o standard-version, e envia o commit e tag
