@@ -2,6 +2,32 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [8.0.0](https://github.com/FabianaTavares/movieinstagram-front/compare/v7.1.0...v8.0.0) (2023-07-29)
+
+
+### ⚠ BREAKING CHANGES
+
+* configurando deploys, pacotes e código
+
+### Errors Corrigidos
+
+* configs firebase yml ([2fd0c79](https://github.com/FabianaTavares/movieinstagram-front/commit/2fd0c79044bc81383f6df58a845d3452459771c3))
+* fix deploy firebase ([6b5c014](https://github.com/FabianaTavares/movieinstagram-front/commit/6b5c01401057262ac3d9485616dc18af7b2b4eec))
+* teste ([393d918](https://github.com/FabianaTavares/movieinstagram-front/commit/393d918bf3f83eb58064936d9cba4f67807648f0))
+* teste ([80a8279](https://github.com/FabianaTavares/movieinstagram-front/commit/80a8279c03c663a0e008a64ae0ffe1abb159398c))
+* teste ([db10d33](https://github.com/FabianaTavares/movieinstagram-front/commit/db10d33774d1b3e5ee7016405b7a96759846d5ff))
+
+
+### Funcionalidades
+
+* congurando deploy, buils, atualizando pacotes ([b07f619](https://github.com/FabianaTavares/movieinstagram-front/commit/b07f619bc239aba201ac774bf3e1cc72cd3c0464))
+* inter ([ac7bb58](https://github.com/FabianaTavares/movieinstagram-front/commit/ac7bb58b38369e8704453da5a63a7b2809889895))
+* node version ([f7a9d8e](https://github.com/FabianaTavares/movieinstagram-front/commit/f7a9d8e8448b5baa6bb0418ad9d0d04c7a2a8bca))
+* teste ([fd920f2](https://github.com/FabianaTavares/movieinstagram-front/commit/fd920f292bf9e01e2f891456c25843ac8fc3da18))
+* teste ([28b5e13](https://github.com/FabianaTavares/movieinstagram-front/commit/28b5e137f0cc755eaaf86842409fe3b735625da8))
+* teste ([a4a82d8](https://github.com/FabianaTavares/movieinstagram-front/commit/a4a82d8fc98134f840f08744868cf2672a7d3c79))
+* teste node version ([385aa81](https://github.com/FabianaTavares/movieinstagram-front/commit/385aa81f8660404cb47fb9d655bd9ac0b5132791))
+
 ## [7.1.0](https://github.com/FabianaTavares/movieinstagram-front/compare/v7.0.0...v7.1.0) (2023-07-24)
 
 
