@@ -8,28 +8,13 @@ name: Deploy to Firebase Hosting on merge
       - master
 jobs:
   build_and_deploy:
-    name: build_and_deploy
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Repo
-        uses: actions/checkout@v3
-
-         # instala a versão 11.x do Node.js
-      - name: Instala o Node.js 14.x
-        uses: actions/setup-node@v1
+      - uses: actions/checkout@v3
+      - run: npm ci && npm run build
+      - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
-          node-version: 14.x
-
-      - name: Install Dependencies
-        run: npm install
-      - name: Build
-        run: npm run build
-      - name: FirebaseHosting Deploy
-        uses: FirebaseExtended/action-hosting-deploy@v0
-        with:
-          entryPoint: "."
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_PROJETOS_ANGULAR_FABI }}'
           channelId: live
           projectId: projetos-angular-fabi
-
