@@ -27,7 +27,7 @@ jobs:
       - name: FirebaseHosting Deploy
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
-          entryPoint: .
+          entryPoint: "."
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_PROJETOS_ANGULAR_FABI }}'
           channelId: live
