@@ -10,11 +10,11 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-       # instala a versão 11.x do Node.js
-      - name: Instala o Node.js 14.x
+       # instala a versão 16.x do Node.js
+      - name: Instala o Node.js 16.20.0
         uses: actions/setup-node@v1
         with:
-          node-version: 14.x
+          node-version: 16.20.0
 
       - run: npm ci && npm run build
       - uses: FirebaseExtended/action-hosting-deploy@v0
