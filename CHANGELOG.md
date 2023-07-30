@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [12.0.0](https://github.com/FabianaTavares/movieinstagram-front/compare/v11.0.1...v12.0.0) (2023-07-30)
+
+
+### ⚠ BREAKING CHANGES
+
+* fix bug firebase deploy
+
+### Errors Corrigidos
+
+* fix bug deploy firebase ([7be6c2d](https://github.com/FabianaTavares/movieinstagram-front/commit/7be6c2d884053baaafa44bc91cd36339cb6b14d2))
+
 ### [11.0.1](https://github.com/FabianaTavares/movieinstagram-front/compare/v11.0.0...v11.0.1) (2023-07-30)
 
 
