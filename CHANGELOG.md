@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [9.14.0](https://github.com/FabianaTavares/movieinstagram-front/compare/v9.13.0...v9.14.0) (2023-07-30)
+
+
+### Funcionalidades
+
+* teste ([17fa06f](https://github.com/FabianaTavares/movieinstagram-front/commit/17fa06f93472bb18ffb3e09ecdc4473956503283))
+
 ## [9.13.0](https://github.com/FabianaTavares/movieinstagram-front/compare/v9.12.0...v9.13.0) (2023-07-30)
 
 
