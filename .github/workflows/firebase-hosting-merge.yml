@@ -12,7 +12,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - run: ng build --configuration=production
       - name: FirebaseHosting Deploy
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
