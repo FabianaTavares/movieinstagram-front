@@ -1,6 +1,6 @@
 {
   "name": "movie-instagram",
-  "version": "12.0.2",
+  "version": "12.0.3",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -82,5 +82,4 @@
     "ts-node": "~8.3.0",
     "typescript": "~4.6.4"
   }
-
 }
