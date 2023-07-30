@@ -10,7 +10,8 @@ jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout Git Repo
+        uses: actions/checkout@v3
 
       # instala a versão 16.x do Node.js
       - name: Instala o Node.js 16.20.0
@@ -18,8 +19,19 @@ jobs:
         with:
           node-version: 16.20.0
 
-      - run: npm ci --omit=dev && npm run build
-      - uses: FirebaseExtended/action-hosting-deploy@v0
+      - name: Cache dependencies
+        id: cache
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: npm-${{ hashFiles('package-lock.json') }}
+          restore-keys: npm-
+
+      - name: npm install, build
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: npm ci --ignore-scripts && npm rum build
+      - name: Deploy to Firebase
+        uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_PROJETOS_ANGULAR_FABI }}'
