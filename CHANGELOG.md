@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [10.0.0](https://github.com/FabianaTavares/movieinstagram-front/compare/v9.18.0...v10.0.0) (2023-07-30)
+
+
+### ⚠ BREAKING CHANGES
+
+* remove firebase of gitigonre
+
+### Funcionalidades
+
+* remove firebase of gitigonre ([c501647](https://github.com/FabianaTavares/movieinstagram-front/commit/c501647b7c82855ad703244184636f94aff2ba54))
+
 ## [9.18.0](https://github.com/FabianaTavares/movieinstagram-front/compare/v9.17.0...v9.18.0) (2023-07-30)
 
 
