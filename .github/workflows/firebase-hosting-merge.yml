@@ -13,6 +13,13 @@ jobs:
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v3
+
+         # instala a versão 11.x do Node.js
+      - name: Instala o Node.js 14.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14.x
+
       - name: Install Dependencies
         run: npm install
       - name: Build
