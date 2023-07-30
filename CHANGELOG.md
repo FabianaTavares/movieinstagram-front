@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [12.3.2](https://github.com/FabianaTavares/movieinstagram-front/compare/v12.3.1...v12.3.2) (2023-07-30)
+
+
+### Errors Corrigidos
+
+* packages ([beb2d89](https://github.com/FabianaTavares/movieinstagram-front/commit/beb2d8954d49c425d13f46f8f42dba4929583e76))
+
 ### [12.3.1](https://github.com/FabianaTavares/movieinstagram-front/compare/v12.3.0...v12.3.1) (2023-07-30)
 
 
