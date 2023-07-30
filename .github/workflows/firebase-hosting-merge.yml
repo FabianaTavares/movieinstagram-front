@@ -29,7 +29,9 @@ jobs:
 
       - name: npm install, build
         if: steps.cache.outputs.cache-hit != 'true'
-        run: npm ci --ignore-scripts && npm rum build
+        run: |
+          npm install
+          npm run build
       - name: Deploy to Firebase
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
