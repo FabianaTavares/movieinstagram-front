@@ -73,7 +73,6 @@
     "prettier": "^3.0.0",
     "standard-version": "^9.5.0",
     "stylelint": "^15.10.2",
-    "stylelint-config-prettier": "^9.0.5",
     "stylelint-config-standard": "^34.0.0",
     "stylelint-prettier": "^4.0.0",
     "ts-node": "^10.9.1",
