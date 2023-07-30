@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [9.0.1](https://github.com/FabianaTavares/movieinstagram-front/compare/v9.0.0...v9.0.1) (2023-07-30)
+
+
+### Errors Corrigidos
+
+* remove enviroment ([2e7a6da](https://github.com/FabianaTavares/movieinstagram-front/commit/2e7a6daeea73dae067f2a1e2f60033f25daeff7d))
+
 ## [9.0.0](https://github.com/FabianaTavares/movieinstagram-front/compare/v8.5.0...v9.0.0) (2023-07-29)
 
 
