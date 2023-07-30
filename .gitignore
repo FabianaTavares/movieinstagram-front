@@ -47,13 +47,4 @@ testem.log
 .DS_Store
 Thumbs.db
 
-# firebase
-/.firebase
-.firebaserc
-firebase.json
-
-# Firebase
-.firebase
-*-debug.log
-.runtimeconfig.json
 src/environments/firebase.environment.ts
