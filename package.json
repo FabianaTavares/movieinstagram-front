@@ -1,6 +1,6 @@
 {
   "name": "movie-instagram",
-  "version": "9.16.0",
+  "version": "9.17.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
