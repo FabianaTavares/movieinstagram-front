@@ -18,7 +18,7 @@ jobs:
         with:
           node-version: 16.20.0
 
-      - run: npm ci --omit=dev && npm run build
+      - run: npm ci --omit=dev --cache .npm --prefer-offline && npm run build
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
