@@ -1,26 +1,12 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable, inject } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Observable, Subject, throwError } from 'rxjs';
-import { delay } from 'rxjs/operators';
 
-import { environment } from './../../../environments/environment';
 import { BestFriendsDTO } from './../models/movie-best-friends.model';
 import { CommentsDTO } from './../models/movie-comments.model';
 import { LikesDTO } from './../models/movie-likes.model';
 import { PostsDTO } from './../models/movie-posts.model';
-import {
-  DataSnapshot,
-  Database,
-  child,
-  get,
-  getDatabase,
-  list,
-  listVal,
-  object,
-  onValue,
-  ref,
-} from '@angular/fire/database';
-import { FirebaseApp, initializeApp } from '@angular/fire/app';
+import { Database, getDatabase, onValue, ref } from '@angular/fire/database';
 
 @Injectable({
   providedIn: 'root',
@@ -39,20 +25,6 @@ export class MovieService {
 
   getUsuarioLogadoEvent() {
     return this.usuarioLogado$.asObservable();
-  }
-
-  private getSimpleRoute(route: string) {
-    const dbRef = getDatabase();
-    const endpoint = ref(dbRef, `${route}/`);
-    return onValue(
-      endpoint,
-      (snapshot) => {
-        console.log(snapshot.val());
-      },
-      {
-        onlyOnce: true,
-      },
-    );
   }
 
   /**

@@ -1,6 +1,15 @@
 {
   "projects": {
     "default": "projetos-angular-fabi"
+  },
+  "targets": {
+    "projetos-angular-fabi": {
+      "hosting": {
+        "movie-instagram": [
+          "projetos-angular-fabi"
+        ]
+      }
+    }
   }
 
 }
