@@ -56,4 +56,4 @@ firebase.json
 .firebase
 *-debug.log
 .runtimeconfig.json
-/envirorments/firebase.envirorments.ts
+/src/envirorments/firebase.envirorments.ts
