@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [13.1.0](https://github.com/FabianaTavares/movieinstagram-front/compare/v13.0.0...v13.1.0) (2023-10-10)
+
+
+### Funcionalidades
+
+* lf para crlf ([3ed5824](https://github.com/FabianaTavares/movieinstagram-front/commit/3ed58248ea1e39fa99de4796408831636c110bfb))
+* started Languages ([8ad17bc](https://github.com/FabianaTavares/movieinstagram-front/commit/8ad17bcdadec561ad3773b0b7895ac81fcc58dd2))
+
 ## [13.0.0](https://github.com/FabianaTavares/movieinstagram-front/compare/v12.8.0...v13.0.0) (2023-10-10)
 
 
