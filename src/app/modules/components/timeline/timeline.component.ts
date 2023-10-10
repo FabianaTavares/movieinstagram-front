@@ -4,6 +4,7 @@ import { MovieService } from '../../services/movie.service';
 import { CommentsDTO } from './../../models/movie-comments.model';
 import { LikesDTO } from './../../models/movie-likes.model';
 import { PostsDTO } from './../../models/movie-posts.model';
+import { LanguageService } from '../../services/language.service';
 
 @Component({
   selector: 'app-timeline',
@@ -18,11 +19,20 @@ export class TimelineComponent implements OnInit {
   amountComments!: number;
   amountLikes!: number;
   loading: boolean = false;
+  lang: string = 'pt-BR';
+  selectedLanguageName!: string;
+  selectedLanguage!: string;
 
-  constructor(private movieService: MovieService) {}
+  constructor(
+    private movieService: MovieService,
+    private languageService: LanguageService,
+  ) {}
 
   ngOnInit(): void {
     this.loading = true;
+    this.selectedLanguage = this.languageService.selectedLanguage;
+    this.selectedLanguageName =
+      this.selectedLanguage === 'pt-BR' ? this.getLangs()[0] : this.getLangs()[1];
     this.retrievePostList();
     this.retrieveCommentsList();
     this.retrieveLikesList();
@@ -57,5 +67,15 @@ export class TimelineComponent implements OnInit {
       },
       () => (this.loading = false),
     );
+  }
+
+  changeLang(languageSelect: string): void {
+    this.selectedLanguageName = languageSelect;
+    this.selectedLanguage = languageSelect;
+    this.languageService.updateLanguage(this.selectedLanguageName);
+  }
+
+  getLangs(): string[] {
+    return ['pt-BR', 'en-US'];
   }
 }

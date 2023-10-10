@@ -4,11 +4,26 @@
 <div class="container">
   <div class="card">
     <div class="card-body">
-      <h2 class="card-title">MovieInstagram</h2>
+      <h2 class="card-title">{{ 'HOME.TITLE' | translate }}</h2>
+      <label>
+        {{ 'HOME.SELECT' | translate }}
+        <select #langSelect (change)="changeLang(langSelect.value)" [value]="selectedLanguageName">
+          <option
+            *ngFor="let languageName of getLangs()"
+            [value]="languageName"
+            [selected]="languageName === selectedLanguageName"
+          >
+            {{ languageName }}
+          </option>
+        </select>
+      </label>
       <div class="divider"></div>
       <div class="section">
-        <app-header [amountPosts]="amountPosts" [amountComments]="amountComments"
-          [amountLikes]="amountLikes"></app-header>
+        <app-header
+          [amountPosts]="amountPosts"
+          [amountComments]="amountComments"
+          [amountLikes]="amountLikes"
+        ></app-header>
       </div>
       <div class="divider"></div>
       <div class="section">

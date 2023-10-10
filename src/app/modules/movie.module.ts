@@ -9,16 +9,15 @@ import { MovieService } from './services/movie.service';
 import { TimelineComponent } from './components/timeline/timeline.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from '../app-routing.module';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { PostsTimelineComponent } from './components/posts-timeline/posts-timeline.component';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { TabsModule } from 'ngx-bootstrap/tabs';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { createTranslateLoader } from './utils/http-loader-factory';
+import { LanguageService } from './services/language.service';
 @NgModule({
-  declarations: [
-    TimelineComponent,
-    HeaderComponent,
-    PostsTimelineComponent,
-  ],
+  declarations: [TimelineComponent, HeaderComponent, PostsTimelineComponent],
   imports: [
     CommonModule,
     RouterModule,
@@ -30,17 +29,16 @@ import { TabsModule } from 'ngx-bootstrap/tabs';
     HttpClientModule,
     TooltipModule.forRoot(),
     TabsModule.forRoot(),
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: createTranslateLoader,
+        deps: [HttpClient],
+      },
+    }),
   ],
-  exports: [
-    TimelineComponent,
-    HeaderComponent,
-    PostsTimelineComponent,
-  ],
-  schemas: [
-    CUSTOM_ELEMENTS_SCHEMA
-  ],
-  providers: [
-    MovieService
-  ]
+  exports: [TimelineComponent, HeaderComponent, PostsTimelineComponent, TranslateModule],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  providers: [MovieService, LanguageService],
 })
-export class MovieModule { }
+export class MovieModule {}
