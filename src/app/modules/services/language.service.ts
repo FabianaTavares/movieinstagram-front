@@ -35,4 +35,3 @@ export class LanguageService {
     this.translate.use(this.selectedLanguage);
   }
 }
-
