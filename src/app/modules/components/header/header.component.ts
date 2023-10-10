@@ -6,43 +6,31 @@ import { MovieService } from '../../services/movie.service';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-
-  @Input()
-  qtdPosts!: number;
-
-  @Input()
-  qtdComentarios!: number;
-
-  @Input()
-  qtdCurtidas!: number;
-
+  @Input() amountPosts!: number;
+  @Input() amountComments!: number;
+  @Input() amountLikes!: number;
 
   @ViewChild('staticTabs', { static: false }) staticTabs!: TabsetComponent;
 
   activeElement: number = 1;
   userSelected: string = '';
 
-  listAtivos: any[] = [
-    { id:1, img: "assets/img/batman.png", user: "batman" },
-    { id:2, img: "assets/img/superman.png", user: "superman"},
-    { id:3, img: "assets/img/wonderWoman.png", user: "wonderWoman" }
+  listActives: any[] = [
+    { id: 1, img: 'assets/img/batman.png', user: 'batman' },
+    { id: 2, img: 'assets/img/superman.png', user: 'superman' },
+    { id: 3, img: 'assets/img/wonderWoman.png', user: 'wonderWoman' },
   ];
 
-  constructor(
-    private movieService: MovieService
-  ) { }
+  constructor(private movieService: MovieService) {}
 
-  ngOnInit(): void {
-
-  }
+  ngOnInit(): void {}
 
   selectTab(index: number, user: string) {
     this.activeElement = index;
     this.userSelected = user;
-    this.movieService.setUsuarioLogadoEvent(user);
+    this.movieService.setLoggedUserEvent(user);
   }
-
 }

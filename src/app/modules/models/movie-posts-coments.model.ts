@@ -1,8 +1,7 @@
 import { PostsDTO } from './movie-posts.model';
-import { LikesDTO } from './movie-likes.model';
-import { CommentsDTO } from "./movie-comments.model";
+import { CommentsDTO } from './movie-comments.model';
 
-export interface PostComComentariosDTO extends PostsDTO {
-  coments: CommentsDTO[];
+export interface postWithCommentsDTO extends PostsDTO {
+  comments: CommentsDTO[];
   likes: string[];
 }

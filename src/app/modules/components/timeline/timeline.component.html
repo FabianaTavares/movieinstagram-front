@@ -1,18 +1,15 @@
-
 <div class="progress" *ngIf="loading">
   <div class="indeterminate"></div>
 </div>
 <div class="container">
   <div class="card">
     <div class="card-body">
-        <h2 class="card-title">MovieInstagram</h2>
-        <div class="divider"></div>
-        <div class="section">
-          <app-header
-            [qtdPosts]="qtdPosts"
-            [qtdComentarios]="qtdComentarios"
-            [qtdCurtidas]="qtdCurtidas" ></app-header>
-        </div>
+      <h2 class="card-title">MovieInstagram</h2>
+      <div class="divider"></div>
+      <div class="section">
+        <app-header [amountPosts]="amountPosts" [amountComments]="amountComments"
+          [amountLikes]="amountLikes"></app-header>
+      </div>
       <div class="divider"></div>
       <div class="section">
         <app-posts-timeline></app-posts-timeline>

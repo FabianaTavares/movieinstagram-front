@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
-import { combineLatest, forkJoin, Subscription } from 'rxjs';
+import { combineLatest, Subscription } from 'rxjs';
 
 import { CommentsDTO } from '../../models/movie-comments.model';
 import { LikesDTO } from '../../models/movie-likes.model';
-import { PostComComentariosDTO } from '../../models/movie-posts-coments.model';
+import { postWithCommentsDTO } from '../../models/movie-posts-coments.model';
 import { PostsDTO } from '../../models/movie-posts.model';
 import { MovieService } from '../../services/movie.service';
 import { BestFriendsDTO } from './../../models/movie-best-friends.model';
@@ -16,48 +16,47 @@ import { map, takeWhile } from 'rxjs/operators';
   styleUrls: ['./posts-timeline.component.scss'],
 })
 export class PostsTimelineComponent implements OnInit {
-  postsListas!: PostsDTO[];
-  comentsListas: CommentsDTO[] = [];
+  postLists!: PostsDTO[];
+  commentsList: CommentsDTO[] = [];
   likesDTO: LikesDTO[] = [];
   bestfriend: BestFriendsDTO[] = [];
   loading: boolean = false;
-  testes: PostComComentariosDTO[] = [];
+  postWithCommentsDTO: postWithCommentsDTO[] = [];
   userSelected: string = '';
   subscription!: Subscription;
   formPostGroup!: UntypedFormGroup;
 
   usersLikes!: number;
-  qtdCurtidas!: number;
-  qtdComentarios!: number;
+  amountLikes!: number;
+  amountComments!: number;
   public isActive: boolean = false;
-
-  componentIsActive = true;
+  componentIsActive: boolean = true;
 
   constructor(
     private movieService: MovieService,
     private formBuilder: UntypedFormBuilder,
   ) {
-    this.subscription = this.movieService.getUsuarioLogadoEvent().subscribe((usuarioTab: any) => {
-      this.userSelected = usuarioTab;
+    this.subscription = this.movieService.getLoggedUserEvent().subscribe((userTab: any) => {
+      this.userSelected = userTab;
     });
   }
 
   ngOnInit(): void {
-    this.recuperaListaPosts();
-    this.criarForm();
+    this.retrievePostList();
+    this.formCreate();
   }
 
   ngOnDestroy() {
     this.subscription.unsubscribe();
   }
 
-  criarForm() {
+  formCreate() {
     this.formPostGroup = this.formBuilder.group({
-      inputComent: ['', [Validators.required]],
+      inputComment: ['', [Validators.required]],
     });
   }
 
-  recuperaListaPosts() {
+  retrievePostList() {
     combineLatest([
       this.movieService.getPostsList(),
       this.movieService.getCommentsList(),
@@ -65,60 +64,59 @@ export class PostsTimelineComponent implements OnInit {
       this.movieService.getBestFriendList(),
     ])
       .pipe(
-        map(([posts, coments, likes, bestFriends]) => ({
+        map(([posts, comments, likes, bestFriends]) => ({
           posts,
-          coments,
+          comments: comments,
           likes,
           bestFriends,
         })),
         takeWhile(() => this.componentIsActive),
       )
       .subscribe((data) => {
-        const postsMap = new Map<string, PostComComentariosDTO>();
-        console.log(postsMap);
+        const postsMap = new Map<string, postWithCommentsDTO>();
+
         for (const post of data.posts) {
-          postsMap.set(post.id, { ...post, coments: [], likes: [] });
+          postsMap.set(post.id, { ...post, comments: [], likes: [] });
         }
-        for (const coment of data.coments) {
-          postsMap.get(coment.postId)?.coments?.push(coment);
+
+        for (const coment of data.comments) {
+          postsMap.get(coment.postId)?.comments?.push(coment);
         }
+
         for (const like of data.likes) {
           postsMap.get(like.postId)?.likes?.push(like.user);
         }
 
-        this.testes = Array.from(postsMap.values());
-
-        console.log(this.testes, data.bestFriends);
-
+        this.postWithCommentsDTO = Array.from(postsMap.values());
         this.bestfriend = data.bestFriends;
       });
   }
 
-  userJaCurtiu(item: PostComComentariosDTO): boolean {
-    return item.likes.indexOf(this.userSelected) === -1 ? false : true;
+  userAlreadyLiked(postWithComments: postWithCommentsDTO): boolean {
+    return postWithComments.likes.indexOf(this.userSelected) === -1 ? false : true;
   }
 
-  likeHeartPost(item: PostComComentariosDTO) {
-    this.isActive = !this.isActive; // necessário?
-    const index = item?.likes?.indexOf(this.userSelected);
+  likeHeartPost(postWithComments: postWithCommentsDTO) {
+    this.isActive = !this.isActive;
+    const index = postWithComments?.likes?.indexOf(this.userSelected);
     if (index == -1) {
-      item.likes.push(this.userSelected);
+      postWithComments.likes.push(this.userSelected);
     } else {
-      item.likes.splice(index, 1);
+      postWithComments.likes.splice(index, 1);
     }
   }
 
-  salvar(item: PostComComentariosDTO) {
-    const comentario = this.formPostGroup.get('inputComent')!.value;
-    this.addComentario(item, comentario);
+  Save(postWithComments: postWithCommentsDTO) {
+    const comment = this.formPostGroup.get('inputcomment')!.value;
+    this.addcomment(postWithComments, comment);
     this.formPostGroup.reset();
   }
 
-  addComentario(item: PostComComentariosDTO, textoComentario: string) {
-    item.coments.push({
+  addcomment(postWithComments: postWithCommentsDTO, textComment: string) {
+    postWithComments.comments.push({
       id: '',
-      postId: item.id,
-      comment: textoComentario,
+      postId: postWithComments.id,
+      comment: textComment,
       user: this.userSelected,
     });
   }

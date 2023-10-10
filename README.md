@@ -2,7 +2,6 @@
 
 ![GitHub Workflow Status](https://github.com/FabianaTavares/movieinstagram-front/workflows/ChangeLog/badge.svg)
 ![GitHub package.json version (subfolder of monorepo)](https://img.shields.io/github/package-json/v/FabianaTavares/movieinstagram-front?color=blue)
-
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=FabianaTavares_movieinstagram-front&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=FabianaTavares_movieinstagram-front)
 
 Bootcamp FrontEnd - IGTI 2020
@@ -23,12 +22,14 @@ Apesar de o curso fornecer o codigo fonte original aos alunos, procurei deixar o
 
 ## Ambiente de Produção
 
-Para visualizar o projeto rodando, basta acessar o [link do desafio!](https://fabi-igti-movinstagram-angular.web.app/)
-OBS: Ainda estou estudando como o firebase pode ler o json backend, é um desafio novo.
-
+Para visualizar o projeto rodando, basta acessar este [link!](https://fabi-igti-movinstagram-angular.web.app/) para o firebase.
 ## Docker Hub
 
 Imagem ainda não disponível no docker hub.
+
+## Sonar - Quality Gate
+
+Acesse o [sonar!](https://sonarcloud.io/project/overview?id=FabianaTavares_movieinstagram-front)
 
 ## Objetivos do Desafio Movinstagram
 

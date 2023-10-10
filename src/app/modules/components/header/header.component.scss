@@ -7,25 +7,24 @@
   margin-left: 150px;
 }
 
-.title-visualizar {
+.title-view {
   margin-top: 10px;
   text-align: center;
   margin-left: 10px;
-
 }
 
-.alinhar {
+.lineup {
   padding: 10px;
 }
 
-.active .alinkdesabled {
- color: white;
- background-color: lightslategray;
- border-radius: 2%;
+.active .alink-disabled {
+  color: white;
+  background-color: lightslategray;
+  border-radius: 2%;
   cursor: pointer;
 }
 
-.alinkdesabled {
+.alink-disabled {
   color: lightslategray;
   cursor: pointer;
 }

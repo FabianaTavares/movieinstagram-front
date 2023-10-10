@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, Subject, throwError } from 'rxjs';
 
@@ -12,19 +11,16 @@ import { Database, getDatabase, onValue, ref } from '@angular/fire/database';
   providedIn: 'root',
 })
 export class MovieService {
-  private usuarioLogado$: Subject<string> = new Subject<string>();
+  private loggedUser$: Subject<string> = new Subject<string>();
 
-  constructor(
-    private http: HttpClient,
-    private database: Database,
-  ) {}
+  constructor(private database: Database) {}
 
-  setUsuarioLogadoEvent(valor: string | undefined) {
-    this.usuarioLogado$.next(valor);
+  setLoggedUserEvent(valor: string | undefined) {
+    this.loggedUser$.next(valor);
   }
 
-  getUsuarioLogadoEvent() {
-    return this.usuarioLogado$.asObservable();
+  getLoggedUserEvent() {
+    return this.loggedUser$.asObservable();
   }
 
   /**
@@ -33,7 +29,7 @@ export class MovieService {
   getPostsList(): Observable<Array<PostsDTO>> {
     const dbRef = getDatabase();
     const endpoint = ref(dbRef, 'posts');
-    return Observable.create((observer: { next: (arg0: Array<PostsDTO>) => unknown }) => {
+    return new Observable((observer: { next: (arg0: Array<PostsDTO>) => unknown }) => {
       onValue(
         endpoint,
         (snapshot) => {
@@ -50,10 +46,9 @@ export class MovieService {
    * @description COMMENTS
    */
   getCommentsList(): Observable<Array<CommentsDTO>> {
-    //return this.http.get<Array<CommentsDTO>>(`${this.database}/comments`);
     const dbRef = getDatabase();
     const endpoint = ref(dbRef, 'comments');
-    return Observable.create((observer: { next: (arg0: Array<CommentsDTO>) => unknown }) => {
+    return new Observable((observer: { next: (arg0: Array<CommentsDTO>) => unknown }) => {
       onValue(
         endpoint,
         (snapshot) => {
@@ -70,10 +65,9 @@ export class MovieService {
    * @description LIKES
    */
   getLikesList(): Observable<Array<LikesDTO>> {
-    //return this.http.get<Array<LikesDTO>>(`${this.database}/likes`).pipe(delay(2000));
     const dbRef = getDatabase();
     const endpoint = ref(dbRef, 'likes');
-    return Observable.create((observer: { next: (arg0: Array<LikesDTO>) => unknown }) => {
+    return new Observable((observer: { next: (arg0: Array<LikesDTO>) => unknown }) => {
       onValue(
         endpoint,
         (snapshot) => {
@@ -90,10 +84,9 @@ export class MovieService {
    * @description FRIENDS
    */
   getBestFriendList(): Observable<Array<BestFriendsDTO>> {
-    //return this.http.get<Array<BestFriendsDTO>>(`${this.database}/bestFriends`).pipe(delay(2000));
     const dbRef = getDatabase();
     const endpoint = ref(dbRef, 'bestFriends');
-    return Observable.create((observer: { next: (arg0: Array<BestFriendsDTO>) => unknown }) => {
+    return new Observable((observer: { next: (arg0: Array<BestFriendsDTO>) => unknown }) => {
       onValue(
         endpoint,
         (snapshot) => {

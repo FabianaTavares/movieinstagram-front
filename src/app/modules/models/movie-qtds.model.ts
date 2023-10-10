@@ -1,5 +1,5 @@
-export interface QtdsDTO {
-  qtdPosts: number;
-  qtdCurtidas: number;
-  qtdComentarios: number;
+export interface AmountDTO {
+  amountPosts: number;
+  amountLikes: number;
+  amountComments: number;
 }
