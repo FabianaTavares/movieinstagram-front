@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, Input, ViewChild } from '@angular/core';
 import { TabsetComponent } from 'ngx-bootstrap/tabs';
 
 import { MovieService } from '../../services/movie.service';
@@ -8,7 +8,7 @@ import { MovieService } from '../../services/movie.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
   @Input() amountPosts!: number;
   @Input() amountComments!: number;
   @Input() amountLikes!: number;
@@ -25,8 +25,6 @@ export class HeaderComponent implements OnInit {
   ];
 
   constructor(private movieService: MovieService) {}
-
-  ngOnInit(): void {}
 
   selectTab(index: number, user: string) {
     this.activeElement = index;

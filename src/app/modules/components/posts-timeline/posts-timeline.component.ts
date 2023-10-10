@@ -4,7 +4,7 @@ import { combineLatest, Subscription } from 'rxjs';
 
 import { CommentsDTO } from '../../models/movie-comments.model';
 import { LikesDTO } from '../../models/movie-likes.model';
-import { postWithCommentsDTO } from '../../models/movie-posts-coments.model';
+import { PostWithCommentsDTO } from '../../models/movie-posts-coments.model';
 import { PostsDTO } from '../../models/movie-posts.model';
 import { MovieService } from '../../services/movie.service';
 import { BestFriendsDTO } from './../../models/movie-best-friends.model';
@@ -21,7 +21,7 @@ export class PostsTimelineComponent implements OnInit {
   likesDTO: LikesDTO[] = [];
   bestfriend: BestFriendsDTO[] = [];
   loading: boolean = false;
-  postWithCommentsDTO: postWithCommentsDTO[] = [];
+  postWithCommentsDTO: PostWithCommentsDTO[] = [];
   userSelected: string = '';
   subscription!: Subscription;
   formPostGroup!: UntypedFormGroup;
@@ -73,7 +73,7 @@ export class PostsTimelineComponent implements OnInit {
         takeWhile(() => this.componentIsActive),
       )
       .subscribe((data) => {
-        const postsMap = new Map<string, postWithCommentsDTO>();
+        const postsMap = new Map<string, PostWithCommentsDTO>();
 
         for (const post of data.posts) {
           postsMap.set(post.id, { ...post, comments: [], likes: [] });
@@ -92,11 +92,11 @@ export class PostsTimelineComponent implements OnInit {
       });
   }
 
-  userAlreadyLiked(postWithComments: postWithCommentsDTO): boolean {
-    return postWithComments.likes.indexOf(this.userSelected) === -1 ? false : true;
+  userAlreadyLiked(postWithComments: PostWithCommentsDTO): boolean {
+    return postWithComments.likes.indexOf(this.userSelected) === -1 ?? false;
   }
 
-  likeHeartPost(postWithComments: postWithCommentsDTO) {
+  likeHeartPost(postWithComments: PostWithCommentsDTO) {
     this.isActive = !this.isActive;
     const index = postWithComments?.likes?.indexOf(this.userSelected);
     if (index == -1) {
@@ -106,13 +106,13 @@ export class PostsTimelineComponent implements OnInit {
     }
   }
 
-  Save(postWithComments: postWithCommentsDTO) {
+  Save(postWithComments: PostWithCommentsDTO) {
     const comment = this.formPostGroup.get('inputcomment')!.value;
     this.addcomment(postWithComments, comment);
     this.formPostGroup.reset();
   }
 
-  addcomment(postWithComments: postWithCommentsDTO, textComment: string) {
+  addcomment(postWithComments: PostWithCommentsDTO, textComment: string) {
     postWithComments.comments.push({
       id: '',
       postId: postWithComments.id,
