@@ -1,6 +1,15 @@
 {
   "HOME": {
     "TITLE": "Instagram Filmes",
-    "SELECT": "Selecione uma Linguagem"
+    "SELECT": "Selecione uma Linguagem",
+    "HEADER": {
+      "POSTS": "Posts",
+      "LIKES": "Curtidas",
+      "COMMENTS": "Comentários",
+      "VISUALTIMELINE": "Visualizar Timeline com:"
+    },
+    "POSTTIMELINE": {
+      "SEND": "Enviar"
+    }
   }
 }

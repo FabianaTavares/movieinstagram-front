@@ -12,9 +12,9 @@
                 <span class="black-text">
                   <span class="title">superman</span>
                   <p>
-                    {{ amountPosts }} posts <br />
-                    {{ amountLikes }} curtidas <br />
-                    {{ amountComments }} comentários
+                    {{ amountPosts }} {{ 'HOME.HEADER.POSTS' | translate }} <br />
+                    {{ amountLikes }} {{ 'HOME.HEADER.LIKES' | translate }} <br />
+                    {{ amountComments }} {{ 'HOME.HEADER.COMMENTS' | translate }}
                   </p>
                 </span>
               </div>
@@ -28,7 +28,9 @@
             <div class="col-12">
               <div class="row">
                 <div class="col-md-12">
-                  <span class="title visual-timer">Visualizar Timeline com:</span>
+                  <span class="title visual-timer">{{
+                    'HOME.HEADER.VISUALTIMELINE' | translate
+                  }}</span>
                 </div>
               </div>
               <div class="row">

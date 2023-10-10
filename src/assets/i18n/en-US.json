@@ -1,6 +1,15 @@
 {
   "HOME": {
     "TITLE": "Movie Instagram",
-    "SELECT": "Change language"
+    "SELECT": "Change language",
+    "HEADER": {
+      "POSTS": "Posts",
+      "LIKES": "Likes",
+      "COMMENTS": "Comments",
+      "VISUALTIMELINE": "View timeline with:"
+    },
+    "POSTTIMELINE": {
+      "SEND": "Send"
+    }
   }
 }
