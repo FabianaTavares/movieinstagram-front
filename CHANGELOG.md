@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [13.0.0](https://github.com/FabianaTavares/movieinstagram-front/compare/v12.8.0...v13.0.0) (2023-10-10)
+
+
+### ⚠ BREAKING CHANGES
+
+* melhoria na configuração do sonar
+
+### Funcionalidades
+
+* melhoria na configuração do sonar ([1ed20a2](https://github.com/FabianaTavares/movieinstagram-front/commit/1ed20a25f2826be880174d6702410eecdac37c2d))
+
 ## [12.8.0](https://github.com/FabianaTavares/movieinstagram-front/compare/v12.7.0...v12.8.0) (2023-10-10)
 
 
