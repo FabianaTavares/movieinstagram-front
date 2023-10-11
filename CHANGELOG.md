@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [13.2.0](https://github.com/FabianaTavares/movieinstagram-front/compare/v13.1.0...v13.2.0) (2023-10-10)
+
+
+### Funcionalidades
+
+* config internacionali and read database ([8222c0a](https://github.com/FabianaTavares/movieinstagram-front/commit/8222c0a7a9e732bb5fce0548dbf40ca8f1ecd3e1))
+
 ## [13.1.0](https://github.com/FabianaTavares/movieinstagram-front/compare/v13.0.0...v13.1.0) (2023-10-10)
 
 
