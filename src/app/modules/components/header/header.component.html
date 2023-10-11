@@ -40,6 +40,7 @@
                     *ngFor="let item of listActives; let i = index"
                     [class.active]="activeElement === i"
                     (click)="selectTab(i, item.user)"
+                    [value]="userSelected"
                   >
                     <a class="flex-sm-fill text-sm-center nav-link alink-disabled">
                       <img

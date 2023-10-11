@@ -22,7 +22,7 @@ export class PostsTimelineComponent implements OnInit {
   bestfriend: BestFriendsDTO[] = [];
   loading: boolean = false;
   postWithCommentsDTO: PostWithCommentsDTO[] = [];
-  userSelected: string = '';
+  userSelected: string = 'superman';
   subscription!: Subscription;
   formPostGroup!: UntypedFormGroup;
 
@@ -93,13 +93,13 @@ export class PostsTimelineComponent implements OnInit {
   }
 
   userAlreadyLiked(postWithComments: PostWithCommentsDTO): boolean {
-    return postWithComments.likes.indexOf(this.userSelected) === -1 ?? false;
+    return postWithComments.likes.indexOf(this.userSelected) > 0 ?? true;
   }
 
   likeHeartPost(postWithComments: PostWithCommentsDTO) {
     this.isActive = !this.isActive;
     const index = postWithComments?.likes?.indexOf(this.userSelected);
-    if (index == -1) {
+    if (index === -1) {
       postWithComments.likes.push(this.userSelected);
     } else {
       postWithComments.likes.splice(index, 1);
@@ -107,7 +107,7 @@ export class PostsTimelineComponent implements OnInit {
   }
 
   Save(postWithComments: PostWithCommentsDTO) {
-    const comment = this.formPostGroup.get('inputcomment')!.value;
+    const comment = this.formPostGroup.get('inputComment')!.value;
     this.addcomment(postWithComments, comment);
     this.formPostGroup.reset();
   }

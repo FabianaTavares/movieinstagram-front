@@ -28,7 +28,7 @@ export class MovieService {
    */
   getPostsList(): Observable<Array<PostsDTO>> {
     const dbRef = getDatabase();
-    const endpoint = ref(dbRef, 'posts');
+    const endpoint = ref(dbRef, 'movieInstagram/posts');
     return new Observable((observer: { next: (arg0: Array<PostsDTO>) => unknown }) => {
       onValue(
         endpoint,
@@ -47,7 +47,7 @@ export class MovieService {
    */
   getCommentsList(): Observable<Array<CommentsDTO>> {
     const dbRef = getDatabase();
-    const endpoint = ref(dbRef, 'comments');
+    const endpoint = ref(dbRef, 'movieInstagram/comments');
     return new Observable((observer: { next: (arg0: Array<CommentsDTO>) => unknown }) => {
       onValue(
         endpoint,
@@ -66,7 +66,7 @@ export class MovieService {
    */
   getLikesList(): Observable<Array<LikesDTO>> {
     const dbRef = getDatabase();
-    const endpoint = ref(dbRef, 'likes');
+    const endpoint = ref(dbRef, 'movieInstagram/likes');
     return new Observable((observer: { next: (arg0: Array<LikesDTO>) => unknown }) => {
       onValue(
         endpoint,
@@ -85,7 +85,7 @@ export class MovieService {
    */
   getBestFriendList(): Observable<Array<BestFriendsDTO>> {
     const dbRef = getDatabase();
-    const endpoint = ref(dbRef, 'bestFriends');
+    const endpoint = ref(dbRef, 'movieInstagram/bestFriends');
     return new Observable((observer: { next: (arg0: Array<BestFriendsDTO>) => unknown }) => {
       onValue(
         endpoint,

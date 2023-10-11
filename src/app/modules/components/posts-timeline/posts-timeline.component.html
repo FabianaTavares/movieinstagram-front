@@ -1,4 +1,4 @@
-<div class="row" *ngFor="let item of postWithCommentsDTO">
+<div class="row" *ngFor="let item of postWithCommentsDTO; let i = index">
   <div class="col-md-12">
     <div class="card mb-3">
       <div class="row g-0">
@@ -10,8 +10,8 @@
             <div class="d-flex">
               <div class="p-2">
                 <img
-                  src="assets/img/superman.png"
-                  alt="superman"
+                  src="{{ item.picture }}"
+                  alt="{{ item.user }}"
                   class="rounded-circle circle-coments"
                 />
               </div>
