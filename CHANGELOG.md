@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [14.6.0](https://github.com/FabianaTavares/movieinstagram-front/compare/v14.5.0...v14.6.0) (2023-10-12)
+
+
+### Funcionalidades
+
+* implements dark mode ([1d64d6f](https://github.com/FabianaTavares/movieinstagram-front/commit/1d64d6f35dc2d2fb1ae3382008847a9c6c7fc02e))
+
 ## [14.5.0](https://github.com/FabianaTavares/movieinstagram-front/compare/v14.4.0...v14.5.0) (2023-10-12)
 
 
