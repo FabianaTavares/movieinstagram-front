@@ -16,9 +16,10 @@ import { environment } from '../environments/environment';
 import { getDatabase, provideDatabase } from '@angular/fire/database';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { createTranslateLoader } from './modules/utils/http-loader-factory';
+import { TestComponent } from './test/test.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, TestComponent],
   imports: [
     BrowserModule,
     RouterModule,

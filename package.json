@@ -5,10 +5,11 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build --configuration=production",
-    "test": "ng test",
+    "test": "ng test --watch=false --code-coverage --source-map=false",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "release": "standard-version"
+    "release": "standard-version",
+    "sonar-scanner": "sonar-scanner"
   },
   "private": true,
   "husky": {
@@ -73,6 +74,7 @@
     "karma-coverage": "~2.0.3",
     "karma-jasmine": "^4.0.2",
     "karma-jasmine-html-reporter": "^1.7.0",
+    "karma-sonarqube-reporter": "^1.4.0",
     "postcss": "^8.4.27",
     "prettier": "^3.0.0",
     "standard-version": "^9.5.0",
