@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [14.5.0](https://github.com/FabianaTavares/movieinstagram-front/compare/v14.4.0...v14.5.0) (2023-10-12)
+
+
+### Funcionalidades
+
+* remove teste component ([53f756e](https://github.com/FabianaTavares/movieinstagram-front/commit/53f756ed32dbe1494c90e6e9f8e33ee1249f1b93))
+
 ## [14.4.0](https://github.com/FabianaTavares/movieinstagram-front/compare/v14.3.0...v14.4.0) (2023-10-12)
 
 
