@@ -4,19 +4,38 @@
 <div class="container">
   <div class="card">
     <div class="card-body">
-      <h2 class="card-title">{{ 'HOME.TITLE' | translate }}</h2>
-      <label>
-        {{ 'HOME.SELECT' | translate }}
-        <select #langSelect (change)="changeLang(langSelect.value)" [value]="selectedLanguageName">
-          <option
-            *ngFor="let languageName of getLangs()"
-            [value]="languageName"
-            [selected]="languageName === selectedLanguageName"
-          >
-            {{ languageName }}
-          </option>
-        </select>
-      </label>
+      <div class="card-body__actions container-fluid col-md-12">
+        <div class="row g-0">
+          <div class="col-md-6 d-flex justify-content-start ml-auto">
+            <h2 class="card-title">{{ 'HOME.TITLE' | translate }}</h2>
+          </div>
+          <div class="col-md-6 d-flex justify-content-end">
+            <div class="d-flex">
+              <div class="p-2">
+                <select
+                  class="form-select"
+                  aria-label="Default select example"
+                  #langSelect
+                  (change)="changeLang(langSelect.value)"
+                  [value]="selectedLanguageName"
+                >
+                  <option selected>{{ 'HOME.SELECT' | translate }}</option>
+                  <option
+                    *ngFor="let languageName of getLangs()"
+                    [value]="languageName"
+                    [selected]="languageName === selectedLanguageName"
+                  >
+                    {{ languageName }}
+                  </option>
+                </select>
+              </div>
+              <div class="ml-auto p-2">
+                <i class="bi bi-highlights" (click)="modifyTheme()"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="divider"></div>
       <div class="section">
         <app-header

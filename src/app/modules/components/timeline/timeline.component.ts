@@ -78,4 +78,8 @@ export class TimelineComponent implements OnInit {
   getLangs(): string[] {
     return ['pt-BR', 'en-US'];
   }
+
+  modifyTheme(): void {
+    document.body.classList.toggle('dark-theme');
+  }
 }
